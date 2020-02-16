@@ -1,3 +1,5 @@
+
+AddHandler application/x-httpd-php72 .php
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
@@ -9,6 +11,14 @@
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
+    # Redirect non-www to www
+    RewriteCond %{HTTP_HOST} !^www\.
+    RewriteRule .* https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Redirect non-http to https
+    RewriteCond %{HTTPS} off
+    RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
     # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_URI} (.+)/$
@@ -18,4 +28,8 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+
+    # Remove index.php
+    RewriteCond %{THE_REQUEST} ^GET.*index\.php [NC]
+    RewriteRule (.*?)index\.php/*(.*) /$1$2 [R=301,NE,L]
 </IfModule>
