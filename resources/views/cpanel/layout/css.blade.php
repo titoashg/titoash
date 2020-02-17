@@ -43,3 +43,10 @@
 <link href="{{url(admin_assets())}}/assets/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css" />
 <!-- END THEME LAYOUT STYLES -->
 <link rel="shortcut icon" href="favicon.ico" />
+
+<!--Data Table-->
+<link href="{{url(admin_assets())}}/assets/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
+<link href="{{url(admin_assets())}}/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="{{url(admin_assets())}}/assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
+
+

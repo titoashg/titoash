@@ -37,8 +37,45 @@
                 <!-- BEGIN PAGE HEADER-->
                 <!-- BEGIN THEME PANEL -->
 
+
             @include(cpanel_layout().'.breadcumb')
             <!-- END PAGE BAR -->
+            <br>
+                <br>
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                @if(\Session::get("msg")!=NULL)
+                <?php
+                    $msgClass="alert-info";
+                    $msg=\Session::get("msg");
+                    $first2Letter=strtolower(substr($msg,0,2));
+                    if($first2Letter=="s:"){
+                        $msg=substr($msg,2);$msgClass="alert-success";
+                    }
+                    else if($first2Letter=="i:"){
+                        $msg=substr($msg,2);$msgClass="alert-info";
+                    }
+                    else if($first2Letter=="w:"){
+                        $msg=substr($msg,2);$msgClass="alert-warning";
+                    }
+                    else if($first2Letter=="e:"){
+                        $msg=substr($msg,2);$msgClass="alert-danger";
+                    }
+                ?>
+                    <div class="alert {{$msgClass}}">
+                        {{$msg}}
+                    </div>
+                @endif
+
+
                 @yield('content')
 
 

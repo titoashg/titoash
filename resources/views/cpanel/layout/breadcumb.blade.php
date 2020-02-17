@@ -1,11 +1,11 @@
 <div class="page-bar">
     <ul class="page-breadcrumb">
         <li>
-            <a href="index.html">Home</a>
+            <a href="{{ url('admin/index') }}">Home</a>
             <i class="fa fa-circle"></i>
         </li>
         <li>
-            <span>Dashboard</span>
+            <span>@yield('subtitle')</span>
         </li>
     </ul>
 

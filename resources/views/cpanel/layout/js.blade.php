@@ -54,3 +54,11 @@
 <script src="{{url(admin_assets())}}/assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
 <script src="{{url(admin_assets())}}/assets/layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script>
 <!-- END THEME LAYOUT SCRIPTS -->
+
+
+<!--Data Table-->
+<script src="{{url(admin_assets())}}/assets/global/scripts/datatable.js" type="text/javascript"></script>
+<script src="{{url(admin_assets())}}/assets/global/plugins/datatables/datatables.min.js" type="text/javascript"></script>
+<script src="{{url(admin_assets())}}/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script>
+<script src="{{url(admin_assets())}}/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+<script src="{{url(admin_assets())}}/assets/pages/scripts/table-datatables-buttons.min.js" type="text/javascript"></script>
