@@ -45,8 +45,8 @@ All Company
                         <tr>
                             <td>{{$counter++}}</td>
                             <td>{{ $com->name }}</td>
-                            <td>{{ $com->is_active }}</td>
-                            <td>{{ $com->created_by }}</td>
+                            <td>{{ $com->is_active==1?'Active':'Dactive' }}</td>
+                            <td>{{ $com->username()->name }}</td>
                             <td>{{ $com->created_at }}</td>
                             <td>
                                 <a href="/admin/allcompany/{{$com->id}}/edit" class="btn green"><i class="glyphicon glyphicon-edit"></i></a>

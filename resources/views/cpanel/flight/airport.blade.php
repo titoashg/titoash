@@ -45,8 +45,8 @@ All Airport
                         <tr>
                             <td>{{$counter++}}</td>
                             <td>{{$airpor->name}}</td>
-                            <td>{{$airpor->is_active}}</td>
-                            <td>{{$airpor->created_by}}</td>
+                            <td>{{$airpor->is_active==1?'Active':'Dactive'}}</td>
+                            <td>{{$airpor->username()->name}}</td>
                             <td>{{$airpor->created_at}}</td>
                             <td>
                                 <a href="/admin/allairport/{{$airpor->id}}/edit" class="btn green"><i class="glyphicon glyphicon-edit"></i></a>
