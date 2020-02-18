@@ -18,10 +18,10 @@ class CreateFlightsTable extends Migration
             $table->integer('from_country');
             $table->integer('to_country');
             $table->string('date_departure');
-            $table->string('date_arrivel');
             $table->string('numberOfflight');
             $table->integer('compony_id');
             $table->integer('stope_flight');
+            $table->integer('is_active');
             $table->integer('created_by');
             $table->timestamps();
         });

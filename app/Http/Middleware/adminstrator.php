@@ -20,7 +20,7 @@ class adminstrator
         {
             return $next($request);
         }else{
-            return redirect('/index');
+            return redirect('/');
         }
     }
 }

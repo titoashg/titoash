@@ -20,7 +20,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/index', function () {
+Route::get('/', function () {
     return view('index');
 });
 
@@ -31,10 +31,11 @@ Route::get('/index', function () {
 
         /* Flight Route */
         Route::get('flight', 'FlightController@index')->name('flight');
-
         Route::get('addflight', 'FlightController@addflight')->name('addflight');
-        Route::post('addflightpost', 'FlightController@addflight');
+        Route::post('addflight', 'FlightController@addflightpost');
 
+
+        /* Company Route */
         Route::get('allcompany', 'FlightController@allcompany')->name('allcompany');
         Route::get('addcompany', 'FlightController@addcompany')->name('addcompany');
         Route::post('addcompany', 'FlightController@addcompanypost');
@@ -43,6 +44,7 @@ Route::get('/index', function () {
         Route::post('allcompany/{id}', 'FlightController@editcompanypost');
 
 
+        /* Airport Route */
         Route::get('allairport', 'FlightController@allairport')->name('allairport');
         Route::get('addairport', 'FlightController@addairport')->name('addairport');
         Route::post('addairport', 'FlightController@addairportpost');

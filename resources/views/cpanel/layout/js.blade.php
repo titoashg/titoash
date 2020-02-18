@@ -62,3 +62,9 @@
 <script src="{{url(admin_assets())}}/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script>
 <script src="{{url(admin_assets())}}/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
 <script src="{{url(admin_assets())}}/assets/pages/scripts/table-datatables-buttons.min.js" type="text/javascript"></script>
+
+
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script src="{{url(admin_assets())}}/assets/pages/scripts/form-repeater.min.js" type="text/javascript"></script>
+<script src="{{url(admin_assets())}}/assets/pages/scripts/components-date-time-pickers.min.js" type="text/javascript"></script>
+        <!-- END PAGE LEVEL SCRIPTS -->

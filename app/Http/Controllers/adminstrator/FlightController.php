@@ -6,24 +6,52 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\companyflight;
 use App\airport;
+use App\flights;
 
 class FlightController extends Controller
 {
     //
-    public function index()
-    {
-        return view('cpanel.flight.index');
-    }
-
-
     /*
     add flight
     TiToASH
     HERE
     */
+
+    public function index()
+    {
+        $flights = flights::where('is_active',1)->where('is_delete',0)->get();
+        return view('cpanel.flight.index',compact('flights'));
+    }
+
     public function addflight()
     {
-        return view('cpanel.flight.index');
+        $airports = airport::where('is_active',1)->where('is_delete',0)->get();
+        $companys = companyflight::where('is_active',1)->where('is_delete',0)->get();
+        return view('cpanel.flight.addflight',compact('airports','companys'));
+    }
+
+    public function addflightpost(Request $request)
+    {
+        $validatedData = $request->validate([
+            'numberflight' => 'required|max:50',
+            'airportnamede' => 'required',
+            'airportnamear' => 'required',
+            'des' => 'required',
+            'companyflight' => 'required',
+            'active' => 'required',
+        ]);
+        $flight = new flights();
+        $flight->numberOfflight	= $request->numberflight;
+        $flight->from_country = $request->airportnamede;
+        $flight->to_country = $request->airportnamear;
+        $flight->date_departure	=$request->des;
+        $flight->compony_id =$request->companyflight;
+        $flight->stope_flight =$request->stopeflight?1:0;
+        $flight->is_active =$request->stopeflight?1:0;
+        $flight->created_by =\Auth::user()->id;
+        $flight->save();
+        \Session::flash("msg","s:Add Flight Success");
+        return redirect("admin/flight");
     }
 
 
