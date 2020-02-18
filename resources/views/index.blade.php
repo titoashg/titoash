@@ -31,7 +31,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!--style form search of flight -->
 <style>
-    .section {
+    /*text.section {
         position: relative;
         height: 100vh;
     }
@@ -43,7 +43,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         right: 0;
         -webkit-transform: translateY(-50%);
         transform: translateY(-50%);
-    }
+    }*/
 
     .booking-form {
         background: rgba(0, 0, 0, 0.7);
@@ -213,7 +213,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="container banner-drop">
 				<div class="header">
 					<div class="header-left logo">
-						<h1><a href="index.blade.php">holidaymaker</a></h1>
+						<h1><a href="{{url('/')}}">holidaymaker</a></h1>
 					</div>
 					<div class="header-right">
 						<nav>
@@ -246,7 +246,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 					<p>Find Travel Perfection With the Professionalism of Experts.</p>
 				</div>
-
+            <br/>
                     <div id="booking" class="section">
                         <div class="section-center">
                             <div class="container">
